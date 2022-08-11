@@ -1,5 +1,7 @@
 const mainTable = document.getElementById("main-table")
 
+let selectedColor = 'pink'
+
 const makeNewRow = () => {
     const newRow = document.createElement("tr")
     for (let i = 0; i < 24; i++) {
@@ -9,13 +11,24 @@ const makeNewRow = () => {
     mainTable.append(newRow)
 }
 
+const fillColor = (e) => {
+    let clickedCell = e.target
+    if (clickedCell.tagName === "TD") {
+        clickedCell.className ? clickedCell.className = "" : clickedCell.className = selectedColor
+    }
+}
+
+const setColor = (e) => selectedColor = e.target.value
 
 
 // Event listeners
 const addRow = document.getElementById("add-row")
 addRow.addEventListener('click', makeNewRow)
 
+mainTable.addEventListener('click', fillColor)
 
+const selectColor = document.getElementById("color-selector")
+selectColor.addEventListener('change', setColor)
 
 
 
