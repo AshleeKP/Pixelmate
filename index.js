@@ -20,8 +20,7 @@ const fillColor = (e) => {
 
 const setColor = (e) => selectedColor = e.target.value
 
-
-// Event listeners
+// Event listenerss
 const addRow = document.getElementById("add-row")
 addRow.addEventListener('click', makeNewRow)
 
@@ -29,7 +28,3 @@ mainTable.addEventListener('click', fillColor)
 
 const selectColor = document.getElementById("color-selector")
 selectColor.addEventListener('change', setColor)
-
-
-
-
